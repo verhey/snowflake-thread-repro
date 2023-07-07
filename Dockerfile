@@ -7,4 +7,4 @@ COPY break_snowflake.py .
 RUN pip install --upgrade pip wheel setuptools && pip install -r requirements.txt
 ENV PYTHONFAULTHANDLER=1
 
-ENTRYPOINT [ "python break_snowflake.py" ]
+CMD ["python3", "break_snowflake.py"]

@@ -3,18 +3,14 @@ import os
 import threading
 
 from dotenv import load_dotenv
-
 from snowflake import connector
 
 
-def connect_to_snowflake(thread_num: int) -> connector.SnowflakeConnection:
-    print(f"Starting thread {thread_num}")
+def connect_to_snowflake() -> connector.SnowflakeConnection:
     return connector.connect(
         user=os.getenv("SNOWSQL_USER"),
         password=os.getenv("SNOWSQL_PWD"),
-        account="hs00696.us-east-1",
-        role="SNOWFLAKE_ENGINEERING",
-        warehouse="XSMALL_WH",
+        account=os.getenv("SNOWSQL_ACCOUNT"),
     )
 
 
@@ -34,8 +30,10 @@ def main():
 
     load_dotenv()
 
-    for i in range(20):
-        thread = threading.Thread(target=connect_to_snowflake, args=(i,))
+    # spins up 20 threads, results in error ~20% of the time
+    for i in range(21):
+        print(f"Starting thread {i}")
+        thread = threading.Thread(target=connect_to_snowflake)
         thread.start()
 
 
