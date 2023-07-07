@@ -2,7 +2,6 @@ import logging
 import os
 import threading
 
-from dotenv import load_dotenv
 from snowflake import connector
 
 
@@ -27,8 +26,6 @@ def main():
             )
         )
         logger.addHandler(ch)
-
-    load_dotenv()
 
     # spins up 30 threads, results in error ~20% of the time
     for i in range(31):
