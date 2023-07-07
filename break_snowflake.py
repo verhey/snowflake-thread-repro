@@ -30,8 +30,8 @@ def main():
 
     load_dotenv()
 
-    # spins up 20 threads, results in error ~20% of the time
-    for i in range(21):
+    # spins up 30 threads, results in error ~20% of the time
+    for i in range(31):
         print(f"Starting thread {i}")
         thread = threading.Thread(target=connect_to_snowflake)
         thread.start()
