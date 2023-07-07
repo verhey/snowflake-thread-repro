@@ -10,4 +10,4 @@ test:
 
 copy-logs:
 	docker cp $$(docker container ls --latest --quiet):/python_connector.log ./python_connector_$$(date +"%I:%M:%S").log
-	docker logs $$(docker container ls --latest --quiet) > stdout_$$(date +"%I:%M:%S").log
+	docker logs $$(docker container ls --latest --quiet) > stdout_$$(date +"%I:%M:%S").log 2>&1
