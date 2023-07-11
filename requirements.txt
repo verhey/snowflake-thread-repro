@@ -18,7 +18,7 @@ PyJWT==2.7.0
 pyOpenSSL==23.2.0
 pytz==2023.3
 requests==2.31.0
-git+https://github.com/snowflakedb/snowflake-connector-python.git@7ac23578fa906cf9e969a6fff2ed4a202a7b69b0
+git+https://github.com/snowflakedb/snowflake-connector-python.git@21d5c0c21f881609cfd7d3ab936be5c8ec16298c
 sortedcontainers==2.4.0
 tomli==2.0.1
 typing_extensions==4.7.1
