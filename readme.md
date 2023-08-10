@@ -1,3 +1,7 @@
+# Update 2023-08
+
+This issue has since been fixed by Snowflake, and connector versions >= 3.1.0 do not experience this segfault
+
 # snowflake-thread-repro
 
 Attempt to repro the segfault error described in snowflakedb/snowflake-connector-python/issues/1627
